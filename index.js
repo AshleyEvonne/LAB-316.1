@@ -15,6 +15,27 @@ const topMenuEl = document.querySelector("#top-menu");
 
 //set the height to 100%
 
-topMenuEl.style.height = "100%"
+topMenuEl.style.height = "100%";
 
 topMenuEl.style.background = "var(--top-menu-bg)";
+
+topMenuEl.classList.add("flex-around");
+
+const menuLinks = [
+    { text: 'about', href: '/about' },
+    { text: 'catalog', href: '/catalog' },
+    { text: 'orders', href: '/orders' },
+    { text: 'account', href: '/account' },
+  ];
+
+  menuLinks.forEach((link) => {
+    //Creat anchor element
+    const aElement = document.createElement ("a");
+    //Add Href
+    aElement.href = link.href;
+    // added text content
+    aElement.textContent = link.text;
+    // Append the new element to the topmenuEl element
+    topMenuEl.appendChild(aElement);
+  });
+
